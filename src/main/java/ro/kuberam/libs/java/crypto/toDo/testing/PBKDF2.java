@@ -10,7 +10,7 @@ public class PBKDF2 {
 
 	/**
 	 * 
-	 * @param Example AML
+	 * @param Example AML 2.
 	 */
     public static void main(String[] args) {
         try {
