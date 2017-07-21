@@ -17,20 +17,21 @@ public class PBKDF2 {
     	
         try {
         	String str1;
-            String str2 = "Hola Mundo";
-            String cadena=""; 
+            String str2 = "s3gur1d@dbuf3t3d3@s3s0r3s3ns1st3m@s";
+            String cadena="Hola Mundo"; 
             
             byte[] bytes1 = cadena.getBytes(StandardCharsets.UTF_16LE);
-            byte[] bytes2 = "asd".getBytes(StandardCharsets.US_ASCII);
+            byte[] bytes2 = str2.getBytes(StandardCharsets.US_ASCII);
             
             
             String salt = "50.eGIYr3ZpxpWw67utH17s/A==";
             //int iterations = Integer.parseInt(salt.substring(0, salt.indexOf('.')));
             
-            byte[] saltBytes = salt.getBytes(Charset.forName("UTF-8"));
+            //byte[] saltBytes = salt.getBytes(Charset.forName("UTF-8"));
 
             //Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, saltBytes, iterations);
-            Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, saltBytes);
+            //Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, saltBytes);
+            Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, bytes2);
             
             byte[] key = rfc2898.getBytes(32);
             str1 = new String(Base64.encode(key));
