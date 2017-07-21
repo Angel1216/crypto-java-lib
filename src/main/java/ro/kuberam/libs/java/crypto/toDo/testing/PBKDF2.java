@@ -8,6 +8,10 @@ import ro.kuberam.libs.java.crypto.toDo.*;
 
 public class PBKDF2 {
 
+	/**
+	 * 
+	 * @param Example AML
+	 */
     public static void main(String[] args) {
         try {
             String password = "iamtwentycharacterss";
