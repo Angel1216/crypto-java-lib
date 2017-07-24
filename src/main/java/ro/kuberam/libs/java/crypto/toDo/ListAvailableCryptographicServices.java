@@ -191,7 +191,7 @@ public class ListAvailableCryptographicServices {
 
 
     public static void main(String[] args) {
-        listServiceTypes();
+        //listServiceTypes();
         listCryptoImpls();
     }
 

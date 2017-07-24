@@ -1,11 +1,19 @@
 package ro.kuberam.libs.java.crypto.toDo.testing;
 
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.stream.Stream;
 
 import org.bouncycastle.util.encoders.Base64;
 
 import ro.kuberam.libs.java.crypto.toDo.*;
+
+import javax.crypto.Cipher;
+import javax.crypto.CipherOutputStream;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 public class PBKDF2 {
 
@@ -33,8 +41,29 @@ public class PBKDF2 {
             //Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, saltBytes);
             Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(str2, bytes2);
             
-            byte[] key = rfc2898.getBytes(32);
-            str1 = new String(Base64.encode(key));
+            RijndaelCrypt rijndaelCrypt = new RijndaelCrypt(rfc2898.toString());
+
+            
+            
+            System.out.println(rijndaelCrypt.encrypt(bytes1));
+//            java.io.ByteArrayOutputStream memoryStream = new java.io.ByteArrayOutputStream();
+            
+            
+            
+            
+            
+               
+            //CipherInputStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write);
+//            CipherOutputStream cryptoStream = new CipherOutputStream(arg0, arg1)
+//    		cryptoStream.Write(bytes1, 0, bytes1.length);
+//    		cryptoStream.FlushFinalBlock();
+            //cryptoStream.write(bytes1);
+//            cryptoStream.flush();
+
+    		
+            
+            byte[] key2 = rfc2898.getBytes(32);
+            str1 = new String(Base64.encode(key2));
             
             System.out.println(str1);
             
