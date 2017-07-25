@@ -21,10 +21,10 @@ public class RijndaelCrypt {
  
     public static final String TAG = "YourAppName";
  
-    private static String TRANSFORMATION = "AES/CBC/PKCS7Padding";
+    //private static String TRANSFORMATION = "AES/CBC/PKCS7Padding";
+    private static String TRANSFORMATION = "AES/ECB/PKCS5PADDING";
     private static String ALGORITHM = "AES";
-    //private static String DIGEST = "MD5";
-    private static String DIGEST = "HmacSHA1";
+    private static String DIGEST = "MD5";
      
     private static Cipher _cipher;
     private static SecretKey _password;
